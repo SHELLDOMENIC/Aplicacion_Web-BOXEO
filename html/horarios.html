@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestión de Horarios - La Vieja Escuela</title>
+
+    <link rel="stylesheet" href="/css/horarios.css">
+    <script src="/js/horarios.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Encabezado principal de la interfaz -->
+    <header class="encabezado">
+        <a href="#" class="logo">
+            CLUB DE BOXEO <span>"LA VIEJA ESCUELA"</span>
+        </a>
+    </header>
+
+    <main class="contenedor">
+
+        <!-- Módulo de gestión de horarios -->
+        <section class="gestion" id="gestion">
+
+            <h1 class="heading">Gestión de Horarios</h1>
+
+            <p class="descripcion">
+                Organiza y administra los horarios de entrenamiento del club.
+            </p>
+
+            <!-- Información de los horarios permitidos -->
+            <div class="horarios-disponibles">
+                <h3>Horarios disponibles</h3>
+
+                <p><strong>Lunes a viernes</strong></p>
+                <p>Mañana: 6:00 AM - 8:30 AM</p>
+                <p>Tarde: 5:00 PM - 6:00 PM</p>
+            </div>
+
+            <button type="button" class="btn" id="btnCrearHorario">
+                Crear Horario
+            </button>
+
+            <!-- Formulario para registrar o modificar horarios -->
+            <div class="formulario-contenedor" id="formularioContenedor">
+
+                <h2 id="tituloFormulario">Nuevo horario</h2>
+
+                <form id="formularioHorario">
+
+                    <div class="input-caja">
+                        <label for="nombreSesion">Nombre de la sesión</label>
+                        <input
+                            type="text"
+                            id="nombreSesion"
+                            placeholder="Ej. Entrenamiento físico"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-caja">
+                        <label for="fechaSesion">Fecha</label>
+                        <input
+                            type="date"
+                            id="fechaSesion"
+                            required
+                        >
+                    </div>
+
+                    <div class="fila-inputs">
+
+                        <div class="input-caja">
+                            <label for="horaInicio">Hora de inicio</label>
+                            <input
+                                type="time"
+                                id="horaInicio"
+                                required
+                            >
+                        </div>
+
+                        <div class="input-caja">
+                            <label for="horaFin">Hora de fin</label>
+                            <input
+                                type="time"
+                                id="horaFin"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="input-caja">
+                        <label for="grupoSesion">Grupo</label>
+
+                        <select id="grupoSesion" required>
+                            <option value="">Seleccionar grupo</option>
+                            <option value="Infantil">Infantil</option>
+                            <option value="Juvenil">Juvenil</option>
+                            <option value="Adultos">Adultos</option>
+                        </select>
+                    </div>
+
+                    <div class="botones-formulario">
+
+                        <button
+                            type="submit"
+                            class="btn"
+                            id="btnGuardar"
+                        >
+                            Guardar horario
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn btn-secundario"
+                            id="btnCancelar"
+                        >
+                            Cancelar
+                        </button>
+
+                    </div>
+
+                </form>
+            </div>
+
+            <p
+                class="mensaje"
+                id="mensajeHorario"
+                role="status"
+                aria-live="polite"
+            ></p>
+
+        </section>
+
+        <!-- Calendario mensual de entrenamientos -->
+        <section class="calendario" id="calendario">
+
+            <h2 class="heading">Calendario de Entrenamientos</h2>
+
+            <div class="calendario-contenedor">
+
+                <div class="calendario-cabecera">
+
+                    <button
+                        type="button"
+                        id="mesAnterior"
+                        class="btn-mes"
+                        aria-label="Mes anterior"
+                    >
+                        &#10094;
+                    </button>
+
+                    <h3 id="mesActual"></h3>
+
+                    <button
+                        type="button"
+                        id="mesSiguiente"
+                        class="btn-mes"
+                        aria-label="Mes siguiente"
+                    >
+                        &#10095;
+                    </button>
+
+                </div>
+
+                <div class="calendario-dias">
+                    <div>Lun</div>
+                    <div>Mar</div>
+                    <div>Mié</div>
+                    <div>Jue</div>
+                    <div>Vie</div>
+                    <div>Sáb</div>
+                    <div>Dom</div>
+                </div>
+
+                <div
+                    class="calendario-grid"
+                    id="diasCalendario"
+                ></div>
+
+            </div>
+
+        </section>
+
+        <!-- Listado de horarios registrados -->
+        <section class="sesiones" id="sesiones">
+
+            <h2 class="heading">Horarios Registrados</h2>
+
+            <div
+                class="lista-sesiones"
+                id="listaSesiones"
+            ></div>
+
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <p>&copy; 2026 Club de Boxeo "La Vieja Escuela"</p>
+    </footer>
+
+</body>
+
+</html>
