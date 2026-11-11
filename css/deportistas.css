@@ -1,0 +1,164 @@
+/* Reset local: tu style.css aplica border:none y text-transform:capitalize a todo */
+.deportistas {
+  min-height: 100vh;
+}
+
+/* ---------- Buscador ---------- */
+.deportistas .buscador {
+  position: relative;
+  max-width: 60rem;
+  margin: 2rem auto 1rem;
+}
+
+.deportistas .buscador i {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+  font-size: 1.8rem;
+  color: var(--claro);
+  pointer-events: none;
+}
+
+.deportistas .buscador input {
+  width: 100%;
+  height: 5.5rem;
+  padding: 0 2rem 0 5.5rem;
+  font-size: 1.7rem;
+  color: var(--verde);
+  background: white;
+  border: 0.2rem solid var(--verde);
+  border-radius: 5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  text-transform: none; /* para que no se muestre en "Capitalize" al escribir */
+  transition: all 0.2s linear;
+}
+
+.deportistas .buscador input::placeholder {
+  color: #888;
+  text-transform: none;
+}
+
+.deportistas .buscador input:focus {
+  border-color: var(--claro);
+  box-shadow: 0 0 0 0.4rem rgba(125, 166, 58, 0.25);
+}
+
+.deportistas .contador {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #666;
+  margin-bottom: 1rem;
+  min-height: 2rem;
+  text-transform: none;
+}
+
+/* ---------- Lista de tarjetas ---------- */
+.deportistas .caja-contenedor {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.deportistas .caja-contenedor .caja {
+  flex: 1 1 28rem;
+  max-width: 40rem;
+  background: white;
+  margin: 1.5rem;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: 0.2s linear;
+}
+
+.deportistas .caja-contenedor .caja:hover {
+  border: 0.2rem solid var(--claro);
+  transform: translateY(-0.3rem);
+}
+
+.deportistas .caja .avatar {
+  width: 8rem;
+  height: 8rem;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: var(--degradado);
+  color: white;
+  font-size: 3rem;
+  line-height: 8rem;
+}
+
+.deportistas .caja h3 {
+  font-size: 2rem;
+  color: var(--verde);
+}
+
+.deportistas .caja .cedula {
+  font-size: 1.5rem;
+  color: #666;
+  padding: 0.5rem 0;
+}
+
+.deportistas .caja .cedula i {
+  color: var(--claro);
+  margin-right: 0.5rem;
+}
+
+.deportistas .caja .categoria {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.3rem 1.5rem;
+  font-size: 1.3rem;
+  color: var(--verde);
+  background: rgba(125, 166, 58, 0.2);
+  border-radius: 5rem;
+}
+
+/* Resalta la coincidencia */
+.deportistas mark {
+  background: rgba(125, 166, 58, 0.35);
+  color: inherit;
+  border-radius: 0.3rem;
+  padding: 0 0.2rem;
+}
+
+/* ---------- Sin resultados ---------- */
+.deportistas .sin-resultados {
+  max-width: 60rem;
+  margin: 3rem auto;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: white;
+  border: 0.1rem dashed var(--claro);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.deportistas .sin-resultados[hidden] {
+  display: none;
+}
+
+.deportistas .sin-resultados i {
+  font-size: 5rem;
+  color: var(--claro);
+}
+
+.deportistas .sin-resultados p {
+  margin-top: 1rem;
+  font-size: 2rem;
+  color: var(--verde);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .deportistas .buscador input {
+    height: 5rem;
+    font-size: 1.6rem;
+  }
+  .deportistas .caja-contenedor .caja {
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+}

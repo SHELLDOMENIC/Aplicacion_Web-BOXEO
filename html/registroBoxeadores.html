@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro de Boxeadores - Club de Boxeo "La Vieja Escuela"</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/registro.css" />
+</head>
+
+<body>
+  <header>
+    <a href="/html/index.html" class="logo">
+      <span>CLUB DE BOXEO </span>"LA VIEJA ESCUELA"</a>
+    <nav class="navbar">
+      <a href="/html/index.html">Inicio</a>
+      <a href="/html/deportistas.html">Fichas Deportistas</a>
+    </nav>
+  </header>
+
+  <section class="registro" id="registro">
+    <h1 class="heading">Registrar Boxeadores</h1>
+
+    <!-- FORMULARIO -->
+    <div class="tarjeta" id="registrar">
+      <h3>Registrar nuevo boxeador</h3>
+      <p class="descripcion">
+        Ingresa los datos personales del nuevo integrante para incorporarlo al club.
+      </p>
+
+      <form id="formDeportista">
+        <div class="form-grid">
+          <div class="campo">
+            <label for="nombres">Nombres completos</label>
+            <input type="text" id="nombres" placeholder="Ingrese los nombres" required />
+          </div>
+
+          <div class="campo">
+            <label for="cedula">Cédula</label>
+            <input type="text" id="cedula" placeholder="Ingrese la cédula" maxlength="10" minlength="10"
+              pattern="[0-9]{10}" inputmode="numeric" required />
+          </div>
+
+          <div class="campo">
+            <label for="fecha">Fecha de nacimiento</label>
+            <input type="date" id="fecha" required />
+          </div>
+
+          <div class="campo">
+            <label for="peso">Peso (kg)</label>
+            <input type="number" id="peso" placeholder="Ejemplo: 65" min="1" max="300" step="0.1" required />
+          </div>
+
+          <div class="campo">
+            <label for="sexo">Sexo</label>
+            <select id="sexo" required>
+              <option value="">Seleccione</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Femenino">Femenino</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="contacto">Contacto</label>
+            <input type="tel" id="contacto" placeholder="Número de teléfono" required />
+          </div>
+        </div>
+
+        <div class="acciones">
+          <button type="submit" class="btn">Registrar boxeador</button>
+          <button type="reset" class="btn btn-limpiar">Limpiar</button>
+        </div>
+
+        <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <!-- LISTA -->
+    <div class="tarjeta" id="lista">
+      <div class="titulo-lista">
+        <div>
+          <h3>Boxeadores registrados</h3>
+          <p class="descripcion">Consulta los integrantes que forman parte del club.</p>
+        </div>
+        <span class="total" id="contador">Total: 0</span>
+      </div>
+
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombres</th>
+              <th>Cédula</th>
+              <th>Fecha de nacimiento</th>
+              <th>Peso</th>
+              <th>Sexo</th>
+              <th>Contacto</th>
+            </tr>
+          </thead>
+          <tbody id="listaDeportistas"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <script src="../js/registro.js"></script>
+</body>
+
+</html>

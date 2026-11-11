@@ -1,334 +1,180 @@
-
 /* =====================================
-   CONFIGURACIÓN GENERAL
+   REGISTRO DE BOXEADORES
+   Usa las variables y el estilo de style.css
 ===================================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.registro {
+  min-height: 100vh;
 }
 
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px;
+/* ---------- Tarjetas ---------- */
+.registro .tarjeta {
+  max-width: 110rem;
+  margin: 2rem auto;
+  padding: 3rem;
+  background: white;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f2f4f7;
-    color: #333;
-    min-height: 100vh;
+.registro .tarjeta h3 {
+  font-size: 2.2rem;
+  color: var(--verde);
+  margin-bottom: 0.5rem;
 }
 
-/* =====================================
-   MENÚ SUPERIOR
-===================================== */
-
-.menu-admin {
-    width: 100%;
-    min-height: 80px;
-    background: #245525;
-    padding: 12px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+.registro .descripcion {
+  font-size: 1.4rem;
+  color: #666;
+  margin-bottom: 2rem;
+  text-transform: none;
 }
 
-.logo-admin {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    flex-shrink: 0;
+/* ---------- Formulario ---------- */
+.registro .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
 }
 
-.logo-admin h2 {
-    color: white;
-    font-size: 19px;
-    letter-spacing: 1px;
-    margin: 0;
+.registro .campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 0;
 }
 
-.logo-admin span {
-    color: #dcebd5;
-    font-size: 12px;
+.registro .campo label {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--verde);
 }
 
-.menu-admin nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    gap: 10px;
+.registro .campo input,
+.registro .campo select {
+  width: 100%;
+  height: 5rem;
+  padding: 0 2rem;
+  font-size: 1.6rem;
+  color: var(--verde);
+  background: white;
+  border: 0.2rem solid var(--verde);
+  border-radius: 5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  text-transform: none;
+  transition: all 0.2s linear;
 }
 
-.menu-admin nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    padding: 11px 15px;
-    border-radius: 6px;
-    transition: 0.3s;
+.registro .campo input::placeholder {
+  color: #888;
+  text-transform: none;
 }
 
-.menu-admin nav a:hover {
-    background: #7da63a;
+.registro .campo input:focus,
+.registro .campo select:focus {
+  border-color: var(--claro);
+  box-shadow: 0 0 0 0.4rem rgba(125, 166, 58, 0.25);
 }
 
-/* =====================================
-   CONTENEDOR PRINCIPAL
-===================================== */
-
-.contenedor {
-    width: 90%;
-    max-width: 1150px;
-    margin: 35px auto;
+/* ---------- Botones (reutilizan .btn de style.css) ---------- */
+.registro .acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
-.bienvenida {
-    margin-bottom: 25px;
+.registro .acciones .btn {
+  margin-top: 0;
 }
 
-.bienvenida h1 {
-    color: #245525;
-    font-size: 29px;
-    margin-bottom: 10px;
+.registro .btn-limpiar {
+  background: white;
+  color: var(--verde);
+  border: 0.2rem solid var(--verde);
 }
 
-.bienvenida p {
-    color: #666;
-    font-size: 15px;
-    line-height: 1.6;
+/* ---------- Mensajes ---------- */
+.registro .mensaje {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  text-transform: none;
 }
 
-/* =====================================
-   TARJETAS
-===================================== */
-
-.tarjeta {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+.registro .mensaje.exito,
+.registro .mensaje.error {
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
 }
 
-.tarjeta h2 {
-    color: #245525;
-    font-size: 22px;
-    margin-bottom: 12px;
+.registro .mensaje.exito {
+  color: var(--verde);
+  background: rgba(125, 166, 58, 0.2);
+  border-left: 0.4rem solid var(--claro);
 }
 
-.descripcion {
-    color: #777;
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 22px;
+.registro .mensaje.error {
+  color: #a12a2a;
+  background: rgba(200, 50, 50, 0.1);
+  border-left: 0.4rem solid #c83232;
 }
 
-/* =====================================
-   FORMULARIO
-===================================== */
-
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px 20px;
+/* ---------- Lista / tabla ---------- */
+.registro .titulo-lista {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
-.campo {
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-    min-width: 0;
+.registro .total {
+  padding: 0.6rem 2rem;
+  font-size: 1.5rem;
+  color: var(--verde);
+  background: rgba(125, 166, 58, 0.2);
+  border-radius: 5rem;
 }
 
-.campo label {
-    color: #333;
-    font-size: 14px;
-    font-weight: bold;
+.registro .tabla-contenedor {
+  width: 100%;
+  overflow-x: auto;
 }
 
-.campo input,
-.campo select {
-    width: 100%;
-    height: 45px;
-    padding: 0 13px;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    background: white;
-    font-size: 14px;
-    color: #333;
+.registro table {
+  width: 100%;
+  min-width: 70rem;
+  border-collapse: collapse;
 }
 
-.campo input:focus,
-.campo select:focus {
-    outline: none;
-    border-color: #7da63a;
-    box-shadow: 0 0 0 3px rgba(125,166,58,0.12);
+.registro thead {
+  background: var(--degradado);
+  color: white;
 }
 
-/* =====================================
-   BOTONES
-===================================== */
-
-.acciones {
-    display: flex;
-    gap: 12px;
-    margin-top: 25px;
+.registro th,
+.registro td {
+  padding: 1.4rem 1.2rem;
+  text-align: left;
+  font-size: 1.4rem;
+  border-bottom: 0.1rem solid #e5e5e5;
 }
 
-.acciones button {
-    border: none;
-    padding: 13px 22px;
-    border-radius: 7px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    transition: 0.3s;
+.registro tbody tr:hover {
+  background: rgba(125, 166, 58, 0.12);
 }
 
-.btn-guardar {
-    background: #245525;
-    color: white;
-}
-
-.btn-guardar:hover {
-    background: #387a38;
-}
-
-.btn-limpiar {
-    background: #e5e5e5;
-    color: #333;
-}
-
-.btn-limpiar:hover {
-    background: #d0d0d0;
-}
-
-/* MENSAJES */
-
-.mensaje {
-    margin-top: 15px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.mensaje.exito {
-    color: #24833a;
-}
-
-.mensaje.error {
-    color: #d32f2f;
-}
-
-/* =====================================
-   LISTA DE BOXEADORES
-===================================== */
-
-.titulo-lista {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.contador {
-    background: #e9f2e5;
-    color: #245525;
-    padding: 9px 15px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.tabla-contenedor {
-    width: 100%;
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    min-width: 700px;
-    border-collapse: collapse;
-}
-
-thead {
-    background: #245525;
-    color: white;
-}
-
-th, td {
-    padding: 15px 12px;
-    text-align: left;
-    font-size: 13px;
-    border-bottom: 1px solid #e5e5e5;
-}
-
-tbody tr:hover {
-    background: #f3f8f0;
-}
-
-/* =====================================
-   TABLET
-===================================== */
-
+/* ---------- Responsive ---------- */
 @media (max-width: 768px) {
-
-    .menu-admin {
-        flex-direction: column;
-        align-items: center;
-        padding: 18px;
-    }
-
-    .menu-admin nav {
-        justify-content: center;
-    }
-
-    .contenedor {
-        width: 94%;
-    }
-
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* =====================================
-   CELULAR
-===================================== */
-
-@media (max-width: 480px) {
-
-    .menu-admin nav {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .menu-admin nav a {
-        width: 100%;
-        text-align: center;
-    }
-
-    .bienvenida h1 {
-        font-size: 23px;
-    }
-
-    .tarjeta {
-        padding: 19px;
-    }
-
-    .acciones {
-        flex-direction: column;
-    }
-
-    .acciones button {
-        width: 100%;
-    }
+  .registro .tarjeta {
+    padding: 2rem 1.5rem;
+  }
+  .registro .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .registro .acciones .btn {
+    width: 100%;
+    text-align: center;
+  }
 }

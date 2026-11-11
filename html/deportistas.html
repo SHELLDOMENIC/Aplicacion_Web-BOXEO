@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deportistas - Club de Boxeo "La Vieja Escuela"</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/deportistas.css" />
+</head>
+
+<body>
+  <header>
+    <a href="#" class="logo">
+      <span>CLUB DE BOXEO </span>"LA VIEJA ESCUELA"</a>
+    <nav class="navbar">
+      <a href="/html/index.html">Inicio</a>
+      <a href="/html/registroBoxeadores.html">Llenar Ficha</a>
+    </nav>
+  </header>
+
+  <section class="deportistas" id="deportistas">
+    <h1 class="heading">Deportistas</h1>
+
+    <div class="buscador">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="search" id="buscador-deportistas" placeholder="Buscar por nombre o cédula" autocomplete="off"
+        aria-label="Buscar deportista por nombre o cédula" />
+    </div>
+
+    <p class="contador" id="contador-deportistas" aria-live="polite"></p>
+
+    <div class="caja-contenedor" id="lista-deportistas">
+      <!-- Las tarjetas se generan desde deportistas.js -->
+    </div>
+
+    <div class="sin-resultados" id="sin-resultados" hidden>
+      <i class="fa-solid fa-user-slash"></i>
+      <p>No se encontraron deportistas</p>
+    </div>
+  </section>
+
+  <script src="/js/deportistas.js"></script>
+</body>
+
+</html>
