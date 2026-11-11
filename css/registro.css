@@ -1,0 +1,334 @@
+
+/* =====================================
+   CONFIGURACIÓN GENERAL
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f4f7;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* =====================================
+   MENÚ SUPERIOR
+===================================== */
+
+.menu-admin {
+    width: 100%;
+    min-height: 80px;
+    background: #245525;
+    padding: 12px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+}
+
+.logo-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.logo-admin h2 {
+    color: white;
+    font-size: 19px;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.logo-admin span {
+    color: #dcebd5;
+    font-size: 12px;
+}
+
+.menu-admin nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.menu-admin nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 11px 15px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.menu-admin nav a:hover {
+    background: #7da63a;
+}
+
+/* =====================================
+   CONTENEDOR PRINCIPAL
+===================================== */
+
+.contenedor {
+    width: 90%;
+    max-width: 1150px;
+    margin: 35px auto;
+}
+
+.bienvenida {
+    margin-bottom: 25px;
+}
+
+.bienvenida h1 {
+    color: #245525;
+    font-size: 29px;
+    margin-bottom: 10px;
+}
+
+.bienvenida p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* =====================================
+   TARJETAS
+===================================== */
+
+.tarjeta {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.tarjeta h2 {
+    color: #245525;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.descripcion {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+/* =====================================
+   FORMULARIO
+===================================== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 20px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-width: 0;
+}
+
+.campo label {
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    height: 45px;
+    padding: 0 13px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    background: white;
+    font-size: 14px;
+    color: #333;
+}
+
+.campo input:focus,
+.campo select:focus {
+    outline: none;
+    border-color: #7da63a;
+    box-shadow: 0 0 0 3px rgba(125,166,58,0.12);
+}
+
+/* =====================================
+   BOTONES
+===================================== */
+
+.acciones {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.acciones button {
+    border: none;
+    padding: 13px 22px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-guardar {
+    background: #245525;
+    color: white;
+}
+
+.btn-guardar:hover {
+    background: #387a38;
+}
+
+.btn-limpiar {
+    background: #e5e5e5;
+    color: #333;
+}
+
+.btn-limpiar:hover {
+    background: #d0d0d0;
+}
+
+/* MENSAJES */
+
+.mensaje {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.mensaje.exito {
+    color: #24833a;
+}
+
+.mensaje.error {
+    color: #d32f2f;
+}
+
+/* =====================================
+   LISTA DE BOXEADORES
+===================================== */
+
+.titulo-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.contador {
+    background: #e9f2e5;
+    color: #245525;
+    padding: 9px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #245525;
+    color: white;
+}
+
+th, td {
+    padding: 15px 12px;
+    text-align: left;
+    font-size: 13px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+tbody tr:hover {
+    background: #f3f8f0;
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 768px) {
+
+    .menu-admin {
+        flex-direction: column;
+        align-items: center;
+        padding: 18px;
+    }
+
+    .menu-admin nav {
+        justify-content: center;
+    }
+
+    .contenedor {
+        width: 94%;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =====================================
+   CELULAR
+===================================== */
+
+@media (max-width: 480px) {
+
+    .menu-admin nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu-admin nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .bienvenida h1 {
+        font-size: 23px;
+    }
+
+    .tarjeta {
+        padding: 19px;
+    }
+
+    .acciones {
+        flex-direction: column;
+    }
+
+    .acciones button {
+        width: 100%;
+    }
+}
